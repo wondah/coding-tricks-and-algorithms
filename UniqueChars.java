@@ -14,22 +14,22 @@ public class UniqueChars {
 	/*
 	 *  N - length of the string
 	 * Time Complexity:		O(N)
-	 * Space Complexity:	O(N)	(HashMap storage)
+	 * Space Complexity:	O(N)	(HashSet storage)
 	 */
 	public static boolean hasUniqueChars1(String s) {
 		if(s.length() > 128) {
 			return false;
 		}
-		HashMap<Character, Boolean> map = new HashMap<Character, Boolean>();
+		HashSet<Character> set = new HashSet<Character>();
 		for(int i = 0; i < s.length(); i++) {
-			if(map.get(s.charAt(i)) != null) {
+			if(set.get(s.charAt(i)) != null) {
 				return false;
 			}
-			map.put(s.charAt(i), true);
+			set.put(s.charAt(i), true);
 		}
 		return true;
 	}
-	
+
 	/*
 	 *  N - length of the string
 	 * Time Complexity:		O(N)
